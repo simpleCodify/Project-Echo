@@ -1,11 +1,11 @@
 //-- Variables / Constants Declarations --//
 
 var pianoKeys = [
-  "c4", "c-4", "d4", "d-4", "e4", "f4", "f-4", "g4", "g-4", "a5", "a-5", "b5"
+  "C4", "Cs4", "D4", "Ds4", "E4", "F4", "Fs4", "G4", "Gs4", "A5", "As5", "B5"
 ];
 
 var gamePattern = [];
-var userClickedPattern = [];
+var userClickedNotes = [];
 
 var started = false;
 var level = 0;
@@ -22,7 +22,13 @@ $(document).keypress(function() {
 
 //-- User Clicks a Piano Key --//
 
-$()
+$(".key").click(function() {
+  var userClickedKey = $(this).attr("id");
+  userClickedNotes.push(userClickedKey);
+  console.log(userClickedKey);
+  console.log(userClickedNotes);
+  playSound(userClickedKey);
+});
 
 //-- Functions of the Game --//
 
