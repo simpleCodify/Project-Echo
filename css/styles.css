@@ -9,7 +9,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: skyblue;
+  background: linear-gradient(220deg, #2c5c74, #96cde8, #cbe1ec);
+  background-size: 600% 600%;
+  animation: ScrollingGradient 10s ease infinite;
 }
 
 /* ----Piano---- */
@@ -17,6 +19,10 @@ body {
   display: flex;
   position: relative;
   margin-left: 4px;
+  left: 15%;
+  transform: translateX(50%);
+  top: 50%;
+  transform: translateY(-70%);
 }
 
 .white-key {
@@ -63,7 +69,7 @@ body {
 
 #level-title {
   font-family: 'Press Start 2P', cursive;
-  font-size: 3rem;
+  font-size: 2.2rem;
   margin: 5%;
   color: #FEF2BF;
 }
@@ -93,4 +99,30 @@ body {
   background-color: grey;
 }
 
-*/
+@-webkit-keyframes ScrollingGradient {
+  0% {
+    background-position: 92% 0%
+  }
+
+  50% {
+    background-position: 9% 100%
+  }
+
+  100% {
+    background-position: 92% 0%
+  }
+}
+
+@keyframes ScrollingGradient {
+  0% {
+    background-position: 92% 0%
+  }
+
+  50% {
+    background-position: 9% 100%
+  }
+
+  100% {
+    background-position: 92% 0%
+  }
+}

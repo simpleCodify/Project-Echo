@@ -3,6 +3,7 @@
 var pianoKeys = [
   "C4", "Cs4", "D4", "Ds4", "E4", "F4", "Fs4", "G4", "Gs4", "A5", "As5", "B5"
 ];
+var userPressedKey;
 
 var gamePattern = [];
 var userClickedNotes = [];
@@ -20,6 +21,22 @@ $(document).keypress(function() {
   }
 });
 
+$(document.body).on('keydown', function(e) {
+  //-- Test for Keyboard Key Press --//
+
+  //console.log(e.keyCode);
+  //userPressedKey = e.keyCode;
+  //console.log(userPressedKey);
+
+  var audio2 = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  var key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+
+  if (!key) return;
+
+  audio2.currentTime = 0;
+  audio2.play();
+});
+
 //-- User Clicks a Piano Key --//
 
 $(".key").click(function() {
@@ -27,6 +44,7 @@ $(".key").click(function() {
   userClickedNotes.push(userClickedKey);
   console.log(userClickedKey);
   console.log(userClickedNotes);
+  console.log((gamePattern === userClickedNotes));
   playSound(userClickedKey);
 });
 
@@ -45,6 +63,8 @@ function nextSequence() {
 
 function playSound(name) {
   var audio = new Audio("sounds/" + name + ".mp3");
+
+  audio.currentTime = 0;
   audio.play();
 }
 

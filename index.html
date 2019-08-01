@@ -9,23 +9,39 @@
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
 
-<body>
-
-  <h1 id="level-title">Press A Key to Start</h1>
+<body class="container">
+  <div class="message-center">
+    <h1 id="level-title">Press A Key to Start</h1>
+  </div>
 
   <div class="piano">
-    <div id="C4-key"class="white-key C4-key key"><span class="note"></span></div>
-    <div id="D4-key" class="white-key D4-key key"><span class="note"></span></div>
-    <div id="E4-key" class="white-key E4-key key"><span class="note"></span></div>
-    <div id="F4-key" class="white-key F4-key key"><span class="note"></span></div>
-    <div id="G4-key" class="white-key G4-key key"><span class="note"></span></div>
-    <div id="A5-key" class="white-key A5-key key"><span class="note"></span></div>
-    <div id="B5-key" class="white-key B5-key key"><span class="note"></span></div>
-    <div id="Cs4-key" class="black-key Cs4-key key"><span class="note"></span></div>
-    <div id="Ds4-key" class="black-key Ds4-key key"><span class="note"></span></div>
-    <div id="Fs4-key" class="black-key Fs4-key key"><span class="note"></span></div>
-    <div id="Gs4-key" class="black-key Gs4-key key"><span class="note"></span></div>
-    <div id="As5-key" class="black-key As5-key key"><span class="note"></span></div>
+    <div data-key="90" id="C4-key" data-note="C4" class="white-key C4-key key"><span class="note"></span></div>
+    <div data-key="88" id="D4-key" data-note="D4" class="white-key D4-key key"><span class="note"></span></div>
+    <div data-key="67" id="E4-key" data-note="E4" class="white-key E4-key key"><span class="note"></span></div>
+    <div data-key="86" id="F4-key" data-note="F4" class="white-key F4-key key"><span class="note"></span></div>
+    <div data-key="66" id="G4-key" data-note="G4" class="white-key G4-key key"><span class="note"></span></div>
+    <div data-key="78" id="A5-key" data-note="A5" class="white-key A5-key key"><span class="note"></span></div>
+    <div data-key="77" id="B5-key" data-note="B5" class="white-key B5-key key"><span class="note"></span></div>
+    <div data-key="83" id="Cs4-key" data-note="Cs4" class="black-key Cs4-key key"><span class="note"></span></div>
+    <div data-key="68" id="Ds4-key" data-note="Ds4" class="black-key Ds4-key key"><span class="note"></span></div>
+    <div data-key="71" id="Fs4-key" data-note="Fs4" class="black-key Fs4-key key"><span class="note"></span></div>
+    <div data-key="72" id="Gs4-key" data-note="Gs4" class="black-key Gs4-key key"><span class="note"></span></div>
+    <div data-key="74" id="As5-key" data-note="As5" class="black-key As5-key key"><span class="note"></span></div>
+  </div>
+
+  <div class="audio-files">
+    <audio data-key="90" src="sounds/C4-key.mp3"></audio>
+    <audio data-key="88" src="sounds/D4-key.mp3"></audio>
+    <audio data-key="67" src="sounds/E4-key.mp3"></audio>
+    <audio data-key="86" src="sounds/F4-key.mp3"></audio>
+    <audio data-key="66" src="sounds/G4-key.mp3"></audio>
+    <audio data-key="78" src="sounds/A5-key.mp3"></audio>
+    <audio data-key="77" src="sounds/B5-key.mp3"></audio>
+    <audio data-key="83" src="sounds/Cs4-key.mp3"></audio>
+    <audio data-key="68" src="sounds/Ds4-key.mp3"></audio>
+    <audio data-key="71" src="sounds/Fs4-key.mp3"></audio>
+    <audio data-key="72" src="sounds/Gs4-key.mp3"></audio>
+    <audio data-key="74" src="sounds/As5-key.mp3"></audio>
   </div>
 
   <script src="js/game.js" charset="utf-8"></script>
