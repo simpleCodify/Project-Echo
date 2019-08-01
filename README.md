@@ -12,15 +12,18 @@ Instructions:
 
 Press any Key to start
 
-Select Difficulty Level :	Cake : 		Lights; White Keys; !Black Keys;
-					        Normal : 	Lights; White Keys; Black Keys;
-					        Hard : 		!Lights; White Keys; !Black Keys;
-					        Insane : 	!Lights ; White Keys; Black Keys; InstantGameOver
+Select Difficulty Level :
 
-Features in Future Updates :			Difficulty Customizer : ?
-								
-							      	    Health Points - Allow Errors depending on Calculation
-							      	    (ie: (sequence.length - sequence) * levelMod) where levelMod = level 1-5 : 5, level 6-10 : 4, level 11-15 : 3... etc)
+Cake : 		Lights; White Keys; !Black Keys;
+Normal : 	Lights; White Keys; Black Keys;
+Hard : 		!Lights; White Keys; !Black Keys;
+Insane : 	!Lights ; White Keys; Black Keys; InstantGameOver
+
+Features in Future Updates :	
+		
+Difficulty Customizer : ?
+Health Points - Allow Errors depending on Calculation
+(ie: (sequence.length - sequence) * levelMod) where levelMod = level 1-5 : 5, level 6-10 : 4, level 11-15 : 3... etc)
 
 
 

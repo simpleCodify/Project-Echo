@@ -8,13 +8,14 @@ var gamePattern = [];
 var userClickedNotes = [];
 var started = false;
 var level = 0;
+var difficulty;
 
 //-- User Keypress --//
 
 $(document).on("keyup", function(e) {
-  if (!started) {
+  if (started === false) {
     if (e.keyCode == 32) {
-      $("#level-title").text("Level" + level);
+      $("#level-title").text("Level " + level);
       nextSequence();
       started = true;
     }
@@ -35,10 +36,11 @@ $(document).on("keyup", function(e) {
   //-- logic for pressed key on keyboard being pushed into array --//
   userClickedNotes.push(userPressedKey);
 
-  if (!key) return;
+  //if (!key) return;
 
   audio2.currentTime = 0;
-  audio2.play(userPressedKey);
+  //audio2.play(userPressedKey);
+  playSound(userPressedKey);
 
   animatePress(userPressedKey);
   checkAnswer(userClickedNotes.length - 1);
@@ -49,7 +51,7 @@ $(document).on("keyup", function(e) {
 $(".key").click(function() {
   var userClickedKey = $(this).attr("id");
   userClickedNotes.push(userClickedKey);
-  console.log(userClickedKey);
+
   playSound(userClickedKey);
   animatePress(userClickedKey);
 
@@ -66,13 +68,13 @@ function checkAnswer(currentLevel) {
       }, 1000);
     }
   } else {
-    playSound("wrong");
-    $("body").addClass("game-over");
+    //playSound("wrong");
+    //$("body").addClass("game-over");
     $("#level-title").text("Game Over");
 
     setTimeout(function() {
       $("body").removeClass("game-over");
-    }, 200);
+    }, 300);
     restart();
   }
 }
@@ -80,23 +82,24 @@ function checkAnswer(currentLevel) {
 function nextSequence() {
   userClickedNotes = [];
   level++;
-  $("#level-title").text("Level" + level);
+  $("#level-title").text("Level " + level);
 
-  var randomNum = Math.floor(Math.random() * 13);
+  var randomNum = Math.floor(Math.random() * 12);
   var randomKey = pianoKeys[randomNum];
 
   gamePattern.push(randomKey);
+  playSound(randomKey);
 
-  $("#" + randomKey).fadeIn(100).fadeOut(100).fadeIn(100);
-  playSequence();
-  return gamePattern;
+  $("#" + randomKey).fadeToggle(100).fadeToggle(100);
+  console.log(gamePattern);
+  console.log(userPressedKey);
 }
 
 function animatePress(currentKey) {
   $("#" + currentKey).addClass("pressed");
   setTimeout(function() {
     $("#" + currentKey).removeClass("pressed");
-  }, 100);
+  }, 50);
 }
 
 function playSound(name) {
