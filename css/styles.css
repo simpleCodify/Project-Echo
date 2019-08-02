@@ -44,7 +44,7 @@ body {
 
 .black-key {
   position: absolute;
-  width: 6.5%;
+  width: 65%;
   max-width: 36px;
   height: 60%;
   max-height: 96px;
@@ -56,27 +56,27 @@ body {
 }
 
 .Cs4-key {
-  left: 42px;
+  left: 36px;
 }
 
 .Ds4-key {
-  left: 106px;
+  left: 92px;
 }
 
 .Fs4-key {
-  left: 234px;
+  left: 204px;
 }
 
 .Gs4-key {
-  left: 298px;
+  left: 260px;
 }
 
 .As5-key {
-  left: 362px;
+  left: 316px;
 }
  /* Piano Ends */
 
-.options-menu {
+/* .options-btn {
   position: fixed;
   right: 20px;
   top: 20px;
@@ -91,7 +91,8 @@ body {
   width: 220px;
   background-color: white;
   margin: 0;
-}
+  opacity: 0;
+} */
 
 #level-title {
   display: flex;

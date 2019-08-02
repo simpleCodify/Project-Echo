@@ -49,6 +49,7 @@ $(document).on("keyup", function(e) {
 //-- User Clicks a Piano Key --//
 
 $(".key").click(function() {
+  $('.options-pane').addClass('hidden');
   var userClickedKey = $(this).attr("id");
   userClickedNotes.push(userClickedKey);
 
@@ -123,3 +124,13 @@ function restart() {
   gamePattern = [];
   started = false;
 }
+
+$('.options-btn').click(function(){
+  $('.options-pane').addClass('show');
+  
+});
+
+$('.options-pane').click(function(){
+  $(this).addClass('hidden');
+});
+
