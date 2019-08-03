@@ -13,6 +13,8 @@ var userClickedNotes = [];
 var started = false;
 var level = 0;
 var difficulty = 1;
+var msec = 800 ;
+
 
 //-- User Keypress --//
 
@@ -100,6 +102,7 @@ function nextSequence() {
   }
 
   gamePattern.push(randomKey);
+  interval();
   playSequence(gamePattern);
 
   if (difficulty == 1 || difficulty == 2) {
@@ -123,7 +126,7 @@ function animateSequence(sequence) {
   sequence.forEach(function(eachKey, idx) {
     setTimeout(function() {
       $("#" + eachKey).fadeToggle(200).fadeToggle(200);
-    }, idx*800);
+    }, idx*msec);
   })
 }
 
@@ -136,16 +139,18 @@ function playSound(name) {
   audio.play();
 }
 
+
 function playSequence(sequence) {
   var audio = [];
   for (var i = 0; i <= sequence.length; i++) {
     audio[i] = new Audio("sounds/" + sequence[i] + ".mp3");
   }
+
   audio.forEach(function(singleAudio, idx){
     setTimeout(function() {
       singleAudio.currentTime;
       singleAudio.play();
-    }, idx*800); 
+    }, idx*msec); 
   })
 }
 
@@ -155,7 +160,12 @@ function restart() {
   started = false;
 }
 
+//-- Timer --//
 
+function interval(){
+  msec = 800 - 100 * (level/2);
+  if ( msec < 100 ) msec = 100 ;
+}
 
 //-- Difficulty Buttons --//
 
