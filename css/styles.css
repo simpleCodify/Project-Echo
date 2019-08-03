@@ -74,6 +74,12 @@ body {
 .As5-key {
   left: 316px;
 }
+
+.btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
  /* Piano Ends */
 
 /* .options-btn {

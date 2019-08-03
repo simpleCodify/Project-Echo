@@ -34,7 +34,7 @@ $(document).on("keyup", function(e) {
   //console.log(e.keyCode);
   var audio2 = document.querySelector(`audio[data-key="${e.keyCode}"]`);
   var key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-  var userPressedKey = $(`.key[data-key="${e.keyCode}"]`).attr("id");
+  let userPressedKey = $(`.key[data-key="${e.keyCode}"]`).attr("id");
 
 
   //-- logic for pressed key on keyboard being pushed into array --//
@@ -85,32 +85,32 @@ function checkAnswer(currentLevel) {
 }
 
 function nextSequence() {
+  started = true;
   userClickedNotes = [];
   level++;
   $("#level-title").text("Level " + level);
-
-  //--Logic for Difficulty Level : if (difficulty === 1) randomNum = 1-7, 
   
   if (difficulty == 1 || difficulty == 3) {
     var randomNum = Math.floor(Math.random() * 7);
     var randomKey = whitePianoKeysOnly[randomNum];
   }
-
   if (difficulty == 2 || difficulty == 4) {
     var randomNum = Math.floor(Math.random() * 12);
     var randomKey = pianoKeys[randomNum];
   }
 
   gamePattern.push(randomKey);
-  playSound(randomKey);
+  playSequence(gamePattern);
 
   if (difficulty == 1 || difficulty == 2) {
-    $("#" + randomKey).fadeToggle(100).fadeToggle(100);
+    animateSequence(gamePattern);
   }
   
   console.log(gamePattern);
   console.log(userPressedKey);
 }
+
+//-- Keys Animation --//
 
 function animatePress(currentKey) {
   $("#" + currentKey).addClass("pressed");
@@ -119,6 +119,16 @@ function animatePress(currentKey) {
   }, 50);
 }
 
+function animateSequence(sequence) {
+  sequence.forEach(function(eachKey, idx) {
+    setTimeout(function() {
+      $("#" + eachKey).fadeToggle(200).fadeToggle(200);
+    }, idx*800);
+  })
+}
+
+//-- Audio Playback --//
+
 function playSound(name) {
   var audio = new Audio("sounds/" + name + ".mp3");
 
@@ -126,14 +136,18 @@ function playSound(name) {
   audio.play();
 }
 
-// function playSequence(gamePattern) {
-//   for (var i = 0; i < gamePattern.length; i++) {
-//     var audio = new Audio("sounds/" + gamePattern[i] + ".mp3");
-//
-//     audio.currentTime = 0;
-//     audio.play();
-//   }
-// }
+function playSequence(sequence) {
+  var audio = [];
+  for (var i = 0; i <= sequence.length; i++) {
+    audio[i] = new Audio("sounds/" + sequence[i] + ".mp3");
+  }
+  audio.forEach(function(singleAudio, idx){
+    setTimeout(function() {
+      singleAudio.currentTime;
+      singleAudio.play();
+    }, idx*800); 
+  })
+}
 
 function restart() {
   level = 0;
@@ -141,12 +155,31 @@ function restart() {
   started = false;
 }
 
-$('.options-btn').click(function(){
-  $('.options-pane').addClass('show');
-  
+
+
+//-- Difficulty Buttons --//
+
+$('#button1').click(function() {
+  difficulty = 1;
+  $('#button2,#button3,#button4').removeClass("active");
+  $(this).addClass("active");
 });
 
-$('.options-pane').click(function(){
-  $(this).addClass('hidden');
+$('#button2').click(function() {
+  difficulty = 2;
+  $('#button1,#button3,#button4').removeClass("active");
+  $(this).addClass("active");
+});
+
+$('#button3').click(function() {
+  difficulty = 3;
+  $('#button1,#button2,#button4').removeClass("active");
+  $(this).addClass("active");
+});
+
+$('#button4').click(function() {
+  difficulty = 4;
+  $('#button1,#button2,#button3').removeClass("active");
+  $(this).addClass("active");
 });
 
