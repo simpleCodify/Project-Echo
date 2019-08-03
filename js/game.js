@@ -13,7 +13,7 @@ var userClickedNotes = [];
 var started = false;
 var level = 0;
 var difficulty = 1;
-var msec = 800 ;
+var msec = 800;
 
 
 //-- User Keypress --//
@@ -86,19 +86,22 @@ function checkAnswer(currentLevel) {
   }
 }
 
+//-- Next Sequence Function --//
+
 function nextSequence() {
   started = true;
   userClickedNotes = [];
   level++;
   $("#level-title").text("Level " + level);
-  
-  if (difficulty == 1 || difficulty == 3) {
-    var randomNum = Math.floor(Math.random() * 7);
-    var randomKey = whitePianoKeysOnly[randomNum];
+  var randomKey ;
+  var randomNum ;
+  if (difficulty % 2 == 1) {
+    randomNum = Math.floor(Math.random() * 7);
+    randomKey = whitePianoKeysOnly[randomNum];
   }
-  if (difficulty == 2 || difficulty == 4) {
-    var randomNum = Math.floor(Math.random() * 12);
-    var randomKey = pianoKeys[randomNum];
+  else {
+    randomNum = Math.floor(Math.random() * 12);
+    randomKey = pianoKeys[randomNum];
   }
 
   gamePattern.push(randomKey);
