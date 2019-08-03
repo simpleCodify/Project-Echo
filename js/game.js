@@ -4,11 +4,15 @@ var pianoKeys = [
   "C4", "Cs4", "D4", "Ds4", "E4", "F4", "Fs4", "G4", "Gs4", "A5", "As5", "B5"
 ];
 
+var whitePianoKeysOnly = [
+  "C4", "D4", "E4", "F4", "G4", "A5", "B5"
+];
+
 var gamePattern = [];
 var userClickedNotes = [];
 var started = false;
 var level = 0;
-var difficulty;
+var difficulty = 1;
 
 //-- User Keypress --//
 
@@ -85,13 +89,25 @@ function nextSequence() {
   level++;
   $("#level-title").text("Level " + level);
 
-  var randomNum = Math.floor(Math.random() * 12);
-  var randomKey = pianoKeys[randomNum];
+  //--Logic for Difficulty Level : if (difficulty === 1) randomNum = 1-7, 
+  
+  if (difficulty == 1 || difficulty == 3) {
+    var randomNum = Math.floor(Math.random() * 7);
+    var randomKey = whitePianoKeysOnly[randomNum];
+  }
+
+  if (difficulty == 2 || difficulty == 4) {
+    var randomNum = Math.floor(Math.random() * 12);
+    var randomKey = pianoKeys[randomNum];
+  }
 
   gamePattern.push(randomKey);
   playSound(randomKey);
 
-  $("#" + randomKey).fadeToggle(100).fadeToggle(100);
+  if (difficulty == 1 || difficulty == 2) {
+    $("#" + randomKey).fadeToggle(100).fadeToggle(100);
+  }
+  
   console.log(gamePattern);
   console.log(userPressedKey);
 }
