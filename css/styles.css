@@ -53,6 +53,7 @@ body {
     "ctitle2 ctitle1 abtsec"
     "hsdiv btgp1 sum"
     ". . .";
+    border: 5px inset #383d42;
 }
 
 .game-title {
