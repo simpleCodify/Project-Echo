@@ -33,9 +33,56 @@ body {
 
 /*--- Navigation / Settings Bar ---*/
 
-#navBarContainer .pos-f-t {
-  line-height: 4;
+.p-4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 30% 15% auto;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  grid-row-gap: 20px;
+  grid-template-areas:
+    ". gtitle ."
+    "ctitle2 ctitle1 abtsec"
+    "hsdiv btgp1 sum";
 }
+
+.game-title {
+  justify-self: center;
+  grid-area: gtitle;
+}
+
+.col-title1 {
+  justify-self: center;
+  grid-area: ctitle1;
+}
+
+.btn-grp1 {
+  justify-self: center;
+  grid-area: btgp1;
+}
+
+.col-title2 {
+  justify-self: center;
+  grid-area: ctitle2;
+}
+
+.hsdiv {
+  justify-self: center;
+  grid-area: hsdiv;
+}
+
+.aboutsec {
+  justify-self: center;
+  grid-area: abtsec;
+}
+
+.summary {
+  justify-self: center;
+  grid-area: sum;
+}
+
+
 
 .text {
   color: #fff;

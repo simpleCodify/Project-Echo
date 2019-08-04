@@ -4,7 +4,7 @@ Echo is a spin-off of the popular game “Simon”, where the player essentially
 
 ---
 
-## Instructions:
+## **Instructions**:
 
 ### Forking Repository:
 
@@ -22,52 +22,39 @@ Echo is a spin-off of the popular game “Simon”, where the player essentially
 6. Type `git clone` , and then paste the URL you copied in Step 2.
 7. Press **Enter**. Your local clone will be created.
 
-## How to Play:
+## **How to Play**:
 
-Press the Spacebar to Start the game!
+### Press the Spacebar to Start the game!
 
-You can either press the keys with the mouse, or play the keys on your Keyboard.
-Starting from the Left:
+You can either press the keys with the mouse, or play the keys on your Keyboard.   
 
-  S   D       G   H   J
-Z   X   C   V   B   N   M
+### Starting from the Left:
+
+**Black Keys**: &nbsp;&nbsp;&nbsp;&nbsp;S - D - - - G - H - J
+
+**White Keys**: Z - X - C - V - B - N - M
+
+### **Select Difficulty Level** :
+
+**Easy** : Keys light up; White Keys Only;    
+**Normal** : Keys light up; White Keys & Black Keys;   
+**Hard** : Keys don't light up; White Keys Only;   
+**Hell** : Keys don't light up; White Keys & Black Keys;   
 
 ---
 
-Technologies Used: HTML, CSS, Javascript, Flexbox, Grid, Bootstrap, jQuery, 
+## **Planned Future Implementations** :
 
+**Health Point System** - Allow Errors depending on a HealthPoint Calculation formula.   
 
-Select Difficulty Level :
+levelModifier = (level1-5:5), (level6-10:3), (level11-15:2), (level16+:1)   
+damageTaken = (gamePattern.length - userClickedNotes.length) * levelModifier
 
-Cake : 		Lights; White Keys; !Black Keys;
-Normal : 	Lights; White Keys; Black Keys;
-Hard : 		!Lights; White Keys; !Black Keys;
-Insane : 	!Lights ; White Keys; Black Keys; InstantGameOver
+---
 
-Upcoming Patch Notes :
+## **Technologies Used**: 
 
-Difficulty Customizer : Customize the Settings
-Health Points - Allow Errors depending on a HealthPoint Calculation formula.
-(ie: (sequence.length - sequence) * levelMod) where levelMod = level 1-5 : 5, level 6-10 : 4, level 11-15 : 3... etc)
+HTML, CSS, Javascript, jQuery, Flexbox, Grid, Bootstrap 
 
+## **Screenshots of Game** : 
 
-Background Gradient : Changes depending on HP
-
-60% <= HP <= 80%
-
-background: rgb(44,92,116);
-background: linear-gradient(90deg, rgba(44,92,116,1) 0%, rgba(150,205,232,1) 60%, rgba(203,225,236,1) 100%);
-
-20% <= HP <= 59%
-
-background: rgb(44,92,116);
-background: linear-gradient(90deg, rgba(44,92,116,1) 0%, rgba(150,205,232,1) 60%, rgba(203,225,236,1) 100%);
-
-HP <= 19%
-
-background: rgb(44,92,116);
-background: linear-gradient(90deg, rgba(44,92,116,1) 0%, rgba(150,205,232,1) 80%, rgba(203,225,236,1) 100%);
-
-Prototype (Alpha 1.0) Layout:
-
-![alt text](https://git.generalassemb.ly/SimplyGA/Project-Piano/blob/master/images/Alpha%201.0.png)

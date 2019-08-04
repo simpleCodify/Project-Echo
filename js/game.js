@@ -60,13 +60,13 @@ $(".key").click(function() {
 
   playSound(userClickedKey);
   animatePress(userClickedKey);
-
   checkAnswer(userClickedNotes.length - 1);
 });
 
 //-- Functions of the Game --//
 
 function checkAnswer(currentLevel) {
+  if (started == false) return ;
   if (gamePattern[currentLevel] === userClickedNotes[currentLevel]) {
     if (userClickedNotes.length === gamePattern.length) {
       setTimeout(function() {
@@ -74,16 +74,17 @@ function checkAnswer(currentLevel) {
       }, 1000);
     }
   } else {
+    started = false ;
     playSound("wrong");
+
     //$("body").addClass("game-over");
-    playSequence(gamePattern);
     $("#level-title").text("Game Over").css("color", "red");
     $(".key").addClass("game-over");
 
     setTimeout(function() {
       $("#level-title").css("color", "#353a3f");
       $(".key").removeClass("game-over");
-    }, 1500);
+    }, 1000);
     restart();
   }
 }
