@@ -74,8 +74,9 @@ function checkAnswer(currentLevel) {
       }, 1000);
     }
   } else {
-    //playSound("wrong");
+    playSound("wrong");
     //$("body").addClass("game-over");
+    playSequence(gamePattern);
     $("#level-title").text("Game Over").css("color", "red");
     $(".key").addClass("game-over");
 

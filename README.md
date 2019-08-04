@@ -1,16 +1,41 @@
-SEI Project 1 : “Echo”
+# Project: “Echo”
 
 Echo is a spin-off of the popular game “Simon”, where the player essentially echoes the sequence of notes played by the game. The game signifies which “button” to press by flashing a light and playing a sound corresponding to that button. The game then adds that key to a sequence, that the player must echo. The player then has a certain amount of time to “echo” that sequence. As the player correctly inputs the sequence, the sequence grows longer and longer, and it becomes a battle of memory. 
 
+---
 
+## Instructions:
+
+### Forking Repository:
+
+1. Make sure you're logged into GitHub with your account.
+2. Find the GitHub repository with which you'd like to work.
+3. Click the Fork button on the upper right-hand side of the repository's page.
+
+### Making a Local Clone:
+
+1. On GitHub, navigate to the main page of the repository.
+2. Under the repository name, click **Clone or download**.
+3. In the Clone with HTTPs section, click copy the clone URL for the repository.
+4. Open Git Bash.
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone` , and then paste the URL you copied in Step 2.
+7. Press **Enter**. Your local clone will be created.
+
+## How to Play:
+
+Press the Spacebar to Start the game!
+
+You can either press the keys with the mouse, or play the keys on your Keyboard.
+Starting from the Left:
+
+  S   D       G   H   J
+Z   X   C   V   B   N   M
+
+---
 
 Technologies Used: HTML, CSS, Javascript, Flexbox, Grid, Bootstrap, jQuery, 
 
-
-
-Instructions:
-
-Press any Key to start
 
 Select Difficulty Level :
 
