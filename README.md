@@ -1,6 +1,6 @@
 # Project: “Echo”
 
-Echo is a spin-off of the popular game “Simon”, where the player essentially echoes the sequence of notes played by the game. The game signifies which “button” to press by flashing a light and playing a sound corresponding to that button. The game then adds that key to a sequence, that the player must echo. The player then has a certain amount of time to “echo” that sequence. As the player correctly inputs the sequence, the sequence grows longer and longer, and it becomes a battle of memory. 
+Echo is a spin-off of the popular game “Simon”, where the player essentially echoes the sequence of notes played by the game. The game signifies which “button” to press by flashing a light and playing a sound corresponding to that button. The game then adds that key to a sequence, that the player must echo. The player then has a certain amount of time to “echo” that sequence. As the player correctly inputs the sequence, the sequence grows longer and longer, and it becomes a battle of memory. Playing on Hard or Hell difficulty will also improve your relative pitch ability! Learn to distinguish the distance of notes relative to one another!
 
 ---
 
@@ -49,6 +49,12 @@ You can either press the keys with the mouse, or play the keys on your Keyboard.
 
 levelModifier = (level1-5:5), (level6-10:3), (level11-15:2), (level16+:1)   
 damageTaken = (gamePattern.length - userClickedNotes.length) * levelModifier
+
+**Free Play Mode** - Allow Player to casually play the piano.
+
+**High-Score Board** - Locally store High-Score data to keep track of the top 5 highest levels you've reached!
+
+**Learn a Song!** - Choose from a playlist of classic piano pieces, and learn to play them by "echoing" the phrases and sections!
 
 ---
 
