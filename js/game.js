@@ -168,7 +168,7 @@ function restart() {
 
 function interval(){
   msec = 800 - 100 * (level/2);
-  if ( msec < 100 ) msec = 100 ;
+  if ( msec < 200 ) msec = 200 ;
 }
 
 //-- Difficulty Buttons --//
@@ -196,4 +196,3 @@ $('#button4').click(function() {
   $('#button1,#button2,#button3').removeClass("active");
   $(this).addClass("active");
 });
-
