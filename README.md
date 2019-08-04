@@ -64,3 +64,8 @@ HTML, CSS, Javascript, jQuery, Flexbox, Grid, Bootstrap
 
 ## **Screenshots of Game** : 
 
+![Game-Idle-Image](https://github.com/simpleCodify/Project-Echo/blob/master/images/Game-Idle.png)
+
+![Game-Level-1-Image](https://github.com/simpleCodify/Project-Echo/blob/master/images/Game-Level-1.png)
+
+![Game-Idle-with-Navbar-Image](https://github.com/simpleCodify/Project-Echo/blob/master/images/Game-Nav-Idle.png)
