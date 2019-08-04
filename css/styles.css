@@ -170,15 +170,40 @@ body {
 }
 
 .credits {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50% 50%;
+  justify-content: center;
   text-align: center;
   vertical-align: bottom;
   font-size: 22px;
   color: #353a3f;
   padding-bottom: 5px;
+  grid-template-areas:
+    ". . . ."
+    "gitlogo linkedinlogo inslogo fblogo";
 }
 
 .gitlogo, .linkedinlogo, .inslogo, .fblogo {
   max-width: 22px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.gitlogo {
+  grid-area: gitlogo;
+}
+
+.linkedinlogo {
+  grid-area: linkedinlogo;
+}
+
+.inslogo {
+  grid-area: inslogo;
+}
+
+.fblogo {
+  grid-area: fblogo;
 }
 
 .game-over {
