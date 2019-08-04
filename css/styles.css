@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 html {
   height: 100%;
   width: 100%;
@@ -6,16 +13,32 @@ html {
 
 }
 
+div {
+  padding: 0;
+}
+
 body {
   margin: 0;
   padding: 0;
   height: 100%;
+  width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  /* justify-content: center; */
   align-items: center;
   animation: flow 5s ease infinite;
   background: linear-gradient(-60deg, #2c5c74, #96cde8, #cbe1ec);
   background-size: 300%;
+}
+/*--- Navigation / Settings Bar ---*/
+
+#navBarContainer .pos-f-t {
+  /* vertical-align: top; */
+  padding: 0;
+}
+
+.text {
+  color: #fff;
 }
 
 /* ----Piano---- */
@@ -103,22 +126,31 @@ body {
 
 #level-title {
   display: flex;
-  font-size: 2.2rem;
+  font-size: 3.5rem;
+  font-weight: 800;
   justify-content: center;
   align-items: center;
-  color: #FEF2BF;
+  color: #353a3f;
   text-align: center;
+  padding: 15px;
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 
-.container {
-  display: grid;
-  /*width: 50%;*/
-  margin: auto;
-  
+.credits {
+  text-align: center;
+  vertical-align: bottom;
+  font-size: 22px;
+  color: #353a3f;
+  padding-bottom: 5px;
+}
+
+.gitlogo, .linkedinlogo, .inslogo, .fblogo {
+  max-width: 22px;
 }
 
 .game-over {
-  background-color: red;
+  border: 3px solid red;
   opacity: 0.8;
 }
 

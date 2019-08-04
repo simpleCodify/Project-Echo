@@ -55,7 +55,6 @@ $(document).on("keyup", function(e) {
 //-- User Clicks a Piano Key --//
 
 $(".key").click(function() {
-  $('.options-pane').addClass('hidden');
   var userClickedKey = $(this).attr("id");
   userClickedNotes.push(userClickedKey);
 
@@ -77,11 +76,13 @@ function checkAnswer(currentLevel) {
   } else {
     //playSound("wrong");
     //$("body").addClass("game-over");
-    $("#level-title").text("Game Over");
+    $("#level-title").text("Game Over").css("color", "red");
+    $(".key").addClass("game-over");
 
     setTimeout(function() {
-      $("body").removeClass("game-over");
-    }, 300);
+      $("#level-title").css("color", "#353a3f");
+      $(".key").removeClass("game-over");
+    }, 1500);
     restart();
   }
 }

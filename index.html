@@ -3,7 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Simon</title>
+  <meta name="viewport" content="width=device-width">
+
+  <title>Echo - Classic Simon with a Mustical Touch</title>
+
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700,900&display=swap" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>  
@@ -12,7 +15,49 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 
-<body class="container">
+<!-- <body class="container"> -->
+<body>
+
+  <div class="pos-f-t container-fluid sticky-top" id="navBarContainer">
+    <div class="collapse" id="navbarToggleExternalContent">
+      <div class="bg-dark p-4">
+        <h5 class="text-white h4">Echo</h5>
+        <br />
+        <span class="text">Difficulty</span>
+        <br />
+
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-secondary active" id="button1">
+            <input type="radio" name="options" id="option1" autocomplete="off" checked> Easy
+          </label>
+          <label class="btn btn-secondary" id="button2">
+            <input type="radio" name="options" id="option2" autocomplete="off"> Normal
+          </label>
+          <label class="btn btn-secondary" id="button3">
+            <input type="radio" name="options" id="option3" autocomplete="off"> Hard
+          </label>
+          <label class="btn btn-secondary" id="button4">
+            <input type="radio" name="options" id="option4" autocomplete="off"> Hell
+          </label>
+        </div>
+        <br />
+        <br />
+        <span class="text">High Scores</span>
+        <br />
+        <span class="text-muted">Coming Soon in Version 1.1</span>
+        <br />
+        <br />
+        <span class="text">About</span>
+        <br />
+      </div>
+    </div>
+    <nav class="navbar navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+  </div>
+
 
   <div class="message-center">
     <h1 id="level-title">Press Spacebar to Start!</h1>
@@ -33,20 +78,17 @@
     <div data-key="74" id="As5" data-note="As5" class="black-key As5-key key"><span class="note"></span></div>
   </div>
 
-  <div class="btn-group btn-group-toggle" data-toggle="buttons">
-    <label class="btn btn-secondary active" id="button1">
-      <input type="radio" name="options" id="option1" autocomplete="off" checked> Easy
-    </label>
-    <label class="btn btn-secondary" id="button2">
-      <input type="radio" name="options" id="option2" autocomplete="off"> Normal
-    </label>
-    <label class="btn btn-secondary" id="button3">
-      <input type="radio" name="options" id="option3" autocomplete="off"> Hard
-    </label>
-    <label class="btn btn-secondary" id="button4">
-      <input type="radio" name="options" id="option4" autocomplete="off"> Hell
-    </label>
-  </div>
+<div class="fixed-bottom credits">
+  <span>
+    Created by simpleCodify
+      <a href="https://github.com/simpleCodify"></a>
+        <br />
+        <img class ="gitlogo" src="https://image.flaticon.com/icons/svg/25/25231.svg">
+        <img class="linkedinlogo" src="https://image.flaticon.com/icons/svg/1384/1384014.svg">
+        <img class="inslogo" src="https://image.flaticon.com/icons/svg/1384/1384015.svg">
+        <img class="fblogo" src="https://image.flaticon.com/icons/svg/1384/1384005.svg">
+  </span>
+</div>
 
   <div class="audio-files">
     <audio data-key="90" src="sounds/C4.mp3"></audio>
