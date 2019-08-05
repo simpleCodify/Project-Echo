@@ -119,6 +119,11 @@ table {
   font-size: 14px;
   border: 2px inset #383d42;
 }
+
+.summary {
+  text-align: center;
+  padding: 0 50px;
+}
 /* ----Piano---- */
 
 .piano {
@@ -182,17 +187,19 @@ table {
 
 #level-title, #level-message {
   display: flex;
-  font-size: 3.5rem;
   font-weight: 800;
   justify-content: center;
   align-items: center;
   color: #353a3f;
   text-align: center;
   padding: 15px;
-  margin-top: 60px;
-  margin-bottom: 70px;
 }
 
+#level-title {
+  font-size: 3.5rem;
+  margin-top: 90px;
+  margin-bottom: 80px;
+}
 #level-message {
   font-size: 2rem;
   margin-top: 80px;
