@@ -69,7 +69,6 @@ body {
 }
 
 .game-title {
-  font-size: 30px;
   justify-self: center;
   grid-area: gtitle;
 }

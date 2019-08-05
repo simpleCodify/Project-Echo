@@ -25,34 +25,33 @@ document.getElementById('inlineFormInput').addEventListener("keyup", function(){
   playerName = $("#inlineFormInput").val();
 })
 
+
 $(document).on("keyup", function(e) {
+  operationKey(e) ;
+});
+
+  //-- Test for Keyboard Key Press --//
+
+function operationKey(e){
+  var audio2 = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  var userPressedKey = $(`.key[data-key="${e.keyCode}"]`).attr("id");
+  playSound(userPressedKey);
+  animatePress(userPressedKey);
   if (started === false) {
     if (e.keyCode == 32) {
       $("#level-title").text("Level " + level);
       started = true;
       nextSequence();   
     }
-  } else {
-    return;
-  }
-});
-
-  //-- Test for Keyboard Key Press --//
-
-$(document).on("keyup", function(e) {
-  if( e.keyCode == 32) return ; 
-  var audio2 = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-  var key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-  let userPressedKey = $(`.key[data-key="${e.keyCode}"]`).attr("id");
-  
-  userClickedNotes.push(userPressedKey);
-
-  audio2.currentTime = 0;
-  
-  playSound(userPressedKey);
-  animatePress(userPressedKey);
-  checkAnswer(userClickedNotes.length - 1);
-});
+    return ;
+  }      
+  if (e.keyCode == 90 || e.keyCode == 88 || e.keyCode == 67 || e.keyCode == 86 || e.keyCode == 66 || e.keyCode == 78 || e.keyCode == 77 || e.keyCode == 83 || e.keyCode == 68 || e.keyCode == 71 || e.keyCode == 72 || e.keyCode == 74) {  
+    userClickedNotes.push(userPressedKey);
+    audio2.currentTime = 0;   
+    checkAnswer(userClickedNotes.length - 1);
+  }        
+  return ;
+}
 
 //-- User Clicks a Piano Key --//
 
@@ -65,6 +64,7 @@ $(".key").click(function() {
   checkAnswer(userClickedNotes.length - 1);
 });
 
+
 //-- Functions of the Game --//
 
 function checkAnswer(currentLevel) {
@@ -72,12 +72,14 @@ function checkAnswer(currentLevel) {
   
   if (gamePattern[currentLevel] === userClickedNotes[currentLevel]) {
     if (userClickedNotes.length === gamePattern.length) {
-      setTimeout(function() {
+      var clearNextSquence = setTimeout(function() {
         nextSequence();
       }, 1000);
     }
   } else {
+    clearTimeout(clearNextSquence) ;
     started = false ;
+    
     displayHighScores(true);
     playSound("wrong");
 
@@ -97,7 +99,7 @@ function checkAnswer(currentLevel) {
 //-- Message Section --//
 
 function encouragementMessage(){
-  
+  if (started == false ) return ;  
   switch(true){
     case level == 1:
       $("#level-message").text(`Welcome to Echo ${playerName}`);
@@ -177,9 +179,7 @@ function highScores() {
 
 function nextSequence() {
   userClickedNotes = [];
-  level++;
-  encouragementMessage();
-
+  
   var randomKey ;
   var randomNum ;
   
@@ -191,7 +191,8 @@ function nextSequence() {
     randomNum = Math.floor(Math.random() * 12);
     randomKey = pianoKeys[randomNum];
   }
-
+  level++;
+  encouragementMessage(); 
   gamePattern.push(randomKey);
   interval();
   playSequence(gamePattern);
