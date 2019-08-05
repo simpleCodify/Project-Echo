@@ -103,7 +103,7 @@ function encouragementMessage(){
       $("#level-message").text(`Welcome to Echo ${playerName}`);
       break;
     case level == 2:
-      $("#level-message").text("TIP: There is no tip.");
+      $("#level-message").text(`Let's train your ear & memory ${playerName}`);
       break;
     case level == 3:
       $("#level-message").text("Off to a good start I guess?");

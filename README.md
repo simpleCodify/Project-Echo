@@ -6,13 +6,13 @@ Echo is a spin-off of the popular game “Simon”, where the player essentially
 
 ## **Instructions**:
 
-### Forking Repository:
+### **Forking Repository**:
 
 1. Make sure you're logged into GitHub with your account.
 2. Find the GitHub repository with which you'd like to work.
 3. Click the Fork button on the upper right-hand side of the repository's page.
 
-### Making a Local Clone:
+### **Making a Local Clone**:
 
 1. On GitHub, navigate to the main page of the repository.
 2. Under the repository name, click **Clone or download**.
@@ -21,18 +21,24 @@ Echo is a spin-off of the popular game “Simon”, where the player essentially
 5. Change the current working directory to the location where you want the cloned directory to be made.
 6. Type `git clone` , and then paste the URL you copied in Step 2.
 7. Press **Enter**. Your local clone will be created.
+   
+---
 
 ## **How to Play**:
 
-### Press the Spacebar to Start the game!
+### Enter your name in the input field on the bar!
+
+**To keep track of how far you've reached, enter your name into the input field. Closing or Refreshing the browser will not delete your saved progress!**
+
+### Press the **Spacebar** to Start the game!
 
 You can either press the keys with the mouse, or play the keys on your Keyboard.   
 
 ### Starting from the Left:
 
-**Black Keys**: &nbsp;&nbsp;&nbsp;&nbsp;S - D - - - G - H - J
+**Black Keys**: &nbsp;&nbsp;&nbsp;&nbsp;**S - D - - - G - H - J**
 
-**White Keys**: Z - X - C - V - B - N - M
+**White Keys**: **Z - X - C - V - B - N - M**
 
 ### **Select Difficulty Level** :
 
@@ -40,6 +46,14 @@ You can either press the keys with the mouse, or play the keys on your Keyboard.
 **Normal** : Keys light up; White Keys & Black Keys;   
 **Hard** : Keys don't light up; White Keys Only;   
 **Hell** : Keys don't light up; White Keys & Black Keys;   
+   
+---
+
+## **Patch Notes** :
+**Version 1.1 Update!**   
+
+Now saves your progress to your local storage!
+Displays Top 5 High Scores in the BAR UI.
 
 ---
 
@@ -52,15 +66,13 @@ damageTaken = (gamePattern.length - userClickedNotes.length) * levelModifier
 
 **Free Play Mode** - Allow Player to casually play the piano.
 
-**High-Score Board** - Locally store High-Score data to keep track of the top 5 highest levels you've reached!
-
 **Learn a Song!** - Choose from a playlist of classic piano pieces, and learn to play them by "echoing" the phrases and sections!
-
+   
 ---
 
 ## **Technologies Used**: 
 
-HTML, CSS, Javascript, jQuery, Flexbox, Grid, Bootstrap 
+HTML, CSS, Javascript, jQuery, Flexbox, Grid, Bootstrap, localStorage, JSON
 
 ## **Screenshots of Game** : 
 
@@ -69,3 +81,4 @@ HTML, CSS, Javascript, jQuery, Flexbox, Grid, Bootstrap
 ![Game-Level-1-Image](https://github.com/simpleCodify/Project-Echo/blob/master/images/Game-Level-1.png)
 
 ![Game-Idle-with-Navbar-Image](https://github.com/simpleCodify/Project-Echo/blob/master/images/Game-Nav-Idle.png)
+
