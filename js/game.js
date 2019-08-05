@@ -15,8 +15,9 @@ var level = 0;
 var difficulty = 1;
 var msec = 800;
 var playerName = $("#inlineFormInput").val();
-var top5Scores = [];
+var top5Scores = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : []
 
+displayHighScores(false);
 
 //-- User Keypress --//
 
@@ -36,21 +37,19 @@ $(document).on("keyup", function(e) {
   }
 });
 
-$(document).on("keyup", function(e) {
   //-- Test for Keyboard Key Press --//
 
+$(document).on("keyup", function(e) {
+  if( e.keyCode == 32) return ; 
   var audio2 = document.querySelector(`audio[data-key="${e.keyCode}"]`);
   var key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
   let userPressedKey = $(`.key[data-key="${e.keyCode}"]`).attr("id");
-
+  
   userClickedNotes.push(userPressedKey);
 
-  //if (!key) return;
-
   audio2.currentTime = 0;
-  //audio2.play(userPressedKey);
+  
   playSound(userPressedKey);
-
   animatePress(userPressedKey);
   checkAnswer(userClickedNotes.length - 1);
 });
@@ -69,7 +68,8 @@ $(".key").click(function() {
 //-- Functions of the Game --//
 
 function checkAnswer(currentLevel) {
-  if (started == false) return ;
+  if (started == false) return;
+  
   if (gamePattern[currentLevel] === userClickedNotes[currentLevel]) {
     if (userClickedNotes.length === gamePattern.length) {
       setTimeout(function() {
@@ -78,10 +78,9 @@ function checkAnswer(currentLevel) {
     }
   } else {
     started = false ;
-    displayHighScores();
+    displayHighScores(true);
     playSound("wrong");
 
-    //$("body").addClass("game-over");
     $("#level-title").text("Game Over").css("color", "red");
     $(".key").addClass("game-over");
     $("#level-message").text(`You got to ${level} ${playerName}!`);
@@ -98,7 +97,7 @@ function checkAnswer(currentLevel) {
 //-- Message Section --//
 
 function encouragementMessage(){
-  //var encourageLevel = level ;
+  
   switch(true){
     case level == 1:
       $("#level-message").text(`Welcome to Echo ${playerName}`);
@@ -144,8 +143,9 @@ function encouragementMessage(){
 }
 
 // --High Scores Function-- //
-function displayHighScores(){
-  highScores();
+
+function displayHighScores(calcNeeded){
+  if (calcNeeded) highScores();
   for (var i = 0 ; i < top5Scores.length  ; i++ ) {
     $("." + (i+1) + "level").text(top5Scores[i][1]);
     $("." + (i+1) + "name" ).text(top5Scores[i][0]);
@@ -170,9 +170,8 @@ function highScores() {
   }
   if ( top5Scores.length > 5 ) top5Scores.pop();
 
+  localStorage.setItem('items', JSON.stringify(top5Scores))
 }
-
-
 
 //-- Next Sequence Function --//
 
@@ -183,6 +182,7 @@ function nextSequence() {
 
   var randomKey ;
   var randomNum ;
+  
   if (difficulty % 2 == 1) {
     randomNum = Math.floor(Math.random() * 7);
     randomKey = whitePianoKeysOnly[randomNum];
@@ -199,9 +199,6 @@ function nextSequence() {
   if (difficulty == 1 || difficulty == 2) {
     animateSequence(gamePattern);
   }
-  
-  console.log(gamePattern);
-  console.log(userPressedKey);
 }
 
 //-- Keys Animation --//
@@ -230,9 +227,9 @@ function playSound(name) {
   audio.play();
 }
 
-
 function playSequence(sequence) {
   var audio = [];
+  
   for (var i = 0; i <= sequence.length; i++) {
     audio[i] = new Audio("sounds/" + sequence[i] + ".mp3");
   }
