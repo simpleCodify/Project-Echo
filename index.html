@@ -39,21 +39,63 @@
         </div>
         
         
-        <span class="text col-title2">High Scores</span>
-        
-        <span class="text-muted hsdiv">Coming Soon in Version 1.1</span>
-        
+        <span class="text col-title2">Top 5 High Scores</span>
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Record</th>
+              <th>Player</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td class="1level"></td>
+              <td class="1name"></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td class="2level"></td>
+              <td class="2name"></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td class="3level"></td>
+              <td class="3name"></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td class="4level"></td>
+              <td class="4name"></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td class="5level"></td>
+              <td class="5name"></td>
+            </tr>
+
+          </tbody>
+          
+        </table>
         
         <span class="text aboutsec">About</span>
         <div class="summary text-muted">A little summary about this project.</div>
 
       </div>
     </div>
-    <nav class="navbar navbar-dark bg-dark">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class=game-title><h4 class="game-title text-white h4">Echo</h4></div>
+    <nav class="navbar navbar-dark bg-dark" id="navbaridle" style="display: grid; grid-template-columns: 70% 15% 4%; grid-template-areas: 'lft input btn'; border: 5px outset #383d42">
+ 
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <input type="text" class="form-control col-auto my-1" id="inlineFormInput" placeholder="Player Name">
+
+
+      <div class="leftsideNav">
+        <div class=game-title><h4 class="game-title text-white h4">Echo</h4></div>
+    </div>
     </nav>
   </div>
 
@@ -76,6 +118,9 @@
     <div data-key="72" id="Gs4" data-note="Gs4" class="black-key Gs4-key key"><span class="note"></span></div>
     <div data-key="74" id="As5" data-note="As5" class="black-key As5-key key"><span class="note"></span></div>
   </div>
+
+  <h1 id="level-message"></h1>
+
 
 <div class="fixed-bottom credits">
   <span>
