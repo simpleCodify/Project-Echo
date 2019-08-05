@@ -24,7 +24,6 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   animation: flow 5s ease infinite;
   background: linear-gradient(-60deg, #2c5c74, #96cde8, #cbe1ec);
@@ -40,6 +39,7 @@ body {
   grid-template-areas:
   "lft input btn";
 }
+
 .table {
   grid-area: hstb;
   justify-content: center;
@@ -210,6 +210,7 @@ table {
 
 .credits {
   display: grid;
+  position: fixed;
   grid-template-columns: 1fr;
   grid-template-rows: 50% 50%;
   justify-content: center;
@@ -217,7 +218,7 @@ table {
   vertical-align: bottom;
   font-size: 22px;
   color: #353a3f;
-  padding-bottom: 5px;
+  padding-bottom: 55px;
   grid-template-areas:
     ". . . ."
     "gitlogo linkedinlogo inslogo fblogo";
