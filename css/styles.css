@@ -69,6 +69,7 @@ body {
 }
 
 .game-title {
+  font-size: 30px;
   justify-self: center;
   grid-area: gtitle;
 }
@@ -116,6 +117,8 @@ body {
 
 table {
   text-align: center;
+  font-size: 14px;
+  border: 2px inset #383d42;
 }
 /* ----Piano---- */
 
