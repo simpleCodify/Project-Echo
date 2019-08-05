@@ -260,25 +260,25 @@ function interval(){
 
 $('#button1').click(function() {
   difficulty = 1;
-  $('#button2,#button3,#button4').removeClass("active");
-  $(this).addClass("active");
+  $('#button2,#button3,#button4').removeClass("active").addClass("text-muted");
+  $(this).addClass("active").removeClass("text-muted");
 });
 
 $('#button2').click(function() {
   difficulty = 2;
-  $('#button1,#button3,#button4').removeClass("active");
-  $(this).addClass("active");
+  $('#button1,#button3,#button4').removeClass("active").addClass("text-muted");
+  $(this).addClass("active").removeClass("text-muted");
 });
 
 $('#button3').click(function() {
   difficulty = 3;
-  $('#button1,#button2,#button4').removeClass("active");
-  $(this).addClass("active");
+  $('#button1,#button2,#button4').removeClass("active").addClass("text-muted");
+  $(this).addClass("active").removeClass("text-muted");
 });
 
 $('#button4').click(function() {
   difficulty = 4;
-  $('#button1,#button2,#button3').removeClass("active");
-  $(this).addClass("active");
+  $('#button1,#button2,#button3').removeClass("active").addClass("text-muted");
+  $(this).addClass("active").removeClass("text-muted");
 });
 
