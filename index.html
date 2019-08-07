@@ -3,9 +3,9 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Echo - Classic Simon with a Mustical Touch</title>
+  <title>Echo Sandbox Testing</title>
 
   <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700,900&display=swap" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>  
@@ -16,130 +16,152 @@
 
 </head>
 
-<body>
+<body class="body" id="thisBody">
 
-  <div class="pos-f-t container-fluid sticky-top" id="navBarContainer" style="padding-left: 0px; padding-right: 0px; max-height: 2%;">
-    <div class="collapse" id="navbarToggleExternalContent">
-      <div class="bg-dark p-4">
+  
+    <nav class="navbar navbar-light justify-content-between" id="navbaridle" style="background-color: transparent; height: 80%; border-bottom: 1px solid rgb(95, 94, 94);">
         
-        <span class="text col-title1">Difficulty</span>
-
-        <div class="btn-group btn-group-toggle btn-grp1" data-toggle="buttons">
-          <label class="btn btn-secondary active bg-dark" id="button1">
-            <input type="radio" name="options" id="option1" autocomplete="off" checked> Easy
-          </label>
-          <label class="btn btn-secondary bg-dark text-muted" id="button2">
-            <input type="radio" name="options" id="option2" autocomplete="off"> Normal
-          </label>
-          <label class="btn btn-secondary bg-dark text-muted" id="button3">
-            <input type="radio" name="options" id="option3" autocomplete="off"> Hard
-          </label>
-          <label class="btn btn-secondary bg-dark text-muted" id="button4">
-            <input type="radio" name="options" id="option4" autocomplete="off"> Hell
-          </label>
-        </div>
-        
-        
-        <span class="text col-title2">Top 5 High Scores</span>
-        <table class="table table-dark text-muted">
-          <thead>
-            <tr>
-              <th>Rank</th>
-              <th>Record</th>
-              <th>Player</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td class="1level"></td>
-              <td class="1name"></td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td class="2level"></td>
-              <td class="2name"></td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td class="3level"></td>
-              <td class="3name"></td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td class="4level"></td>
-              <td class="4name"></td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td class="5level"></td>
-              <td class="5name"></td>
-            </tr>
-
-          </tbody>
-          
-        </table>
-        
-        <span class="text aboutsec">How to Play</span>
-        <div class="summary text-muted">Enter your name to keep track of your scores!
-          <br>
-          Press Spacebar to start, and echo the sequence that is played to reach higher levels!
-          <br>
-          Train your ears to distinguish and identify the notes being played, and the relative distance between each note.
-          Good luck & Enjoy!
-        </div>
-
-      </div>
-    </div>
-    <nav class="navbar navbar-dark bg-dark" id="navbaridle" style="display: grid; grid-template-columns: 70% 15% 55px; grid-template-areas: 'lft input btn'; border: 5px outset #383d42">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-            
-      <input type="text" class="form-control col-auto my-1 bg-dark text-light" id="inlineFormInput" placeholder="Player Name">
-
       <div class="leftsideNav">
-        <div class=game-title><h4 class="game-title text-white h4" style="font-size: 30px;">Echo</h4></div>
-        </div>
+        <div class=game-title><h4 class="game-title h4" style="font-size: 26px;">Echo</h4></div>
+      </div>
+      
+      <div class="rightsideNav">
+        <input type="text" class="form-control text-light outline-primary" id="inlineFormInput" placeholder="Player Name" style="height: 80%; font-size: 16px;">
+
+        <button class="navbar-toggler btn-outline-primary" id="navToggleBtn" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" style="font-family: 'Helvetica', sans-serif; color: white; font-size: 16px; height: 80%; border: 1px solid rgb(63, 133, 210);" aria-controls="navbarToggleExternalContent" aria-expanded="false">menu</button>
+      </div>
+      
     </nav>
 
-  </div>
 
+  <div class="pos-f-t container-fluid">
+      <div class="collapse" id="navbarToggleExternalContent">
+        <div class="p-4 collapse" id="navBarDropContainer" style="background-color: transparent;">
+          
+          <div class="difficultySection">
+            <span class="text col-title1 text-muted">Difficulty</span>
+  
+            <div class="btn-group btn-group-toggle btn-grp1" data-toggle="buttons">
+              <label class="btn btn-secondary text-muted active" id="button1" style="background-color: #cadefc">
+                <input type="radio" name="options" id="option1" autocomplete="off" checked> Easy 
+              </label>
+
+              <label class="btn btn-secondary text-muted" id="button2" style="background-color: #cadefc">
+                <input type="radio" name="options" id="option2" autocomplete="off"> Normal
+              </label>
+
+              <label class="btn btn-secondary text-muted" id="button3" style="background-color: #cadefc">
+                <input type="radio" name="options" id="option3" autocomplete="off"> Hard
+              </label>
+
+              <label class="btn btn-secondary text-muted" id="button4" style="background-color: #cadefc">
+                <input type="radio" name="options" id="option4" autocomplete="off"> Hell
+              </label>
+            </div>
+          </div>
+  
+          <div class="topScoresSection">
+            <span class="text col-title2 text-muted">Top 5 High Scores</span>
+
+            <table class="table text-muted">
+
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Record</th>
+                  <th>Player</th>
+                </tr>
+              </thead>
+    
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td class="1level"></td>
+                  <td class="1name"></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td class="2level"></td>
+                  <td class="2name"></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td class="3level"></td>
+                  <td class="3name"></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td class="4level"></td>
+                  <td class="4name"></td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td class="5level"></td>
+                  <td class="5name"></td>
+                </tr>
+              </tbody>
+              
+            </table>
+          </div>
+          
+          <div class="aboutSection" id="abtSection">
+            <span class="text aboutsec text-muted">How to Play</span>
+
+            <div class="summary text-muted">Enter your name to keep track of your scores!
+              <br>Press Spacebar to start, and echo the sequence that is played to reach higher levels!
+              <br>Train your ears to distinguish and identify the notes being played, and the relative distance between each note.
+              <br>
+              <br>
+              Good luck & Enjoy!
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
 
   <div class="message-center">
     <h1 id="level-title">Press Spacebar to Start!</h1>
   </div>
 
-  <div class="piano">
-    <div data-key="90" id="C4" data-note="C4" class="white-key C4-key key"><span class="note"></span></div>
-    <div data-key="88" id="D4" data-note="D4" class="white-key D4-key key"><span class="note"></span></div>
-    <div data-key="67" id="E4" data-note="E4" class="white-key E4-key key"><span class="note"></span></div>
-    <div data-key="86" id="F4" data-note="F4" class="white-key F4-key key"><span class="note"></span></div>
-    <div data-key="66" id="G4" data-note="G4" class="white-key G4-key key"><span class="note"></span></div>
-    <div data-key="78" id="A5" data-note="A5" class="white-key A5-key key"><span class="note"></span></div>
-    <div data-key="77" id="B5" data-note="B5" class="white-key B5-key key"><span class="note"></span></div>
-    <div data-key="83" id="Cs4" data-note="Cs4" class="black-key Cs4-key key"><span class="note"></span></div>
-    <div data-key="68" id="Ds4" data-note="Ds4" class="black-key Ds4-key key"><span class="note"></span></div>
-    <div data-key="71" id="Fs4" data-note="Fs4" class="black-key Fs4-key key"><span class="note"></span></div>
-    <div data-key="72" id="Gs4" data-note="Gs4" class="black-key Gs4-key key"><span class="note"></span></div>
-    <div data-key="74" id="As5" data-note="As5" class="black-key As5-key key"><span class="note"></span></div>
+
+  <div class="pianoContainer" id="pianoBox">
+
+        <div class="piano">
+            <div data-key="90" id="C4" data-note="C4" class="white-key C4-key key"><span class="note"></span></div>
+            <div data-key="88" id="D4" data-note="D4" class="white-key D4-key key"><span class="note"></span></div>
+            <div data-key="67" id="E4" data-note="E4" class="white-key E4-key key"><span class="note"></span></div>
+            <div data-key="86" id="F4" data-note="F4" class="white-key F4-key key"><span class="note"></span></div>
+            <div data-key="66" id="G4" data-note="G4" class="white-key G4-key key"><span class="note"></span></div>
+            <div data-key="78" id="A5" data-note="A5" class="white-key A5-key key"><span class="note"></span></div>
+            <div data-key="77" id="B5" data-note="B5" class="white-key B5-key key"><span class="note"></span></div>
+            <div data-key="83" id="Cs4" data-note="Cs4" class="black-key Cs4-key key"><span class="note"></span></div>
+            <div data-key="68" id="Ds4" data-note="Ds4" class="black-key Ds4-key key"><span class="note"></span></div>
+            <div data-key="71" id="Fs4" data-note="Fs4" class="black-key Fs4-key key"><span class="note"></span></div>
+            <div data-key="72" id="Gs4" data-note="Gs4" class="black-key Gs4-key key"><span class="note"></span></div>
+            <div data-key="74" id="As5" data-note="As5" class="black-key As5-key key"><span class="note"></span></div>
+          </div>
+
   </div>
 
-  <h1 id="level-message"></h1>
+
+  <div class="encMessage">
+        <h1 id="level-message"></h1>
+  </div>
 
 
-<div class="credits fixed-bottom">
-  <span class="text-muted">
-    simpleCodify
-      <a href="https://github.com/simpleCodify"></a>
-        <br />
-        <img class ="gitlogo" src="https://image.flaticon.com/icons/svg/25/25231.svg">
-        <img class="linkedinlogo" src="https://image.flaticon.com/icons/svg/1384/1384014.svg">
-        <img class="inslogo" src="https://image.flaticon.com/icons/svg/1384/1384015.svg">
-        <img class="fblogo" src="https://image.flaticon.com/icons/svg/1384/1384005.svg">
-  </span>
-</div>
+  <div class="credits footerSection" id="footerSec">
+
+        <a href="https://github.com/simpleCodify" class="gitLink" style="color: rgb(150, 150, 150);">simpleCodify</a>
+        <div class="footerLogos">
+          <img class ="gitlogo" src="https://image.flaticon.com/icons/svg/270/270798.svg">
+          <img class="linkedinlogo" src="https://image.flaticon.com/icons/svg/174/174857.svg">
+          <img class="inslogo" src="https://image.flaticon.com/icons/svg/174/174855.svg">
+          <img class="fblogo" src="https://image.flaticon.com/icons/svg/174/174848.svg">
+        </div>
+
+  </div> 
 
   <div class="audio-files">
     <audio data-key="90" src="sounds/C4.mp3"></audio>
