@@ -11,6 +11,10 @@ html, body {
 
 
 body {
+  /* background: linear-gradient(137deg, rgba(0,0,0,1) 0%, rgba(27,27,27,1) 45%, rgba(32,32,32,0.7021183473389356) 50%, rgba(27,27,27,1) 55%, rgba(0,0,0,1) 100%);
+  background-size: 1000% 1000%;
+  -webkit-animation: AnimationName 15s ease infinite;
+  animation: AnimationName 15s ease infinite; */
   background: linear-gradient(137deg, #000000, #202020, #000000);
   background-size: 600% 600%;
   -webkit-animation: AnimationName 9s ease infinite;
@@ -63,12 +67,15 @@ body {
         display: grid;
         justify-self: start;
         background-color: transparent;
+        text-align: center;
         grid-area: form;
         border: 1px solid rgb(63, 133, 210);
       }
       button#navToggleBtn.navbar-toggler {
         display: grid;
         justify-self: end;
+        /* width: 60px; */
+        /* background-image: url(https://image.flaticon.com/icons/svg/179/179567.svg); */
         grid-area: nTbtn;
       }
 
@@ -96,7 +103,7 @@ div#navBarDropContainer.p-4 {
     text-align: center;
     align-content: space-around;
     justify-content: space-around;
-    border: 3px outset #defcf9;
+    /* border: 1px outset #ffffff; */
     border-radius: 0 0 20px 0;
   }
     span.text.col-title1 {
@@ -108,16 +115,16 @@ div#navBarDropContainer.p-4 {
     text-align: center;
     /* align-content: space-around; */
     justify-content: space-around;
-    border: 3px outset #defcf9;
+    /* border: 1px outset #ffffff; */
     border-radius: 0 0 20px 0;
-
   }
+    
   div.aboutSection {
     display: grid;
     grid-area: aSec;
     text-align: center;
     background-color: transparent;
-    border: 3px outset #defcf9;
+    /* border: 1px outset #ffffff; */
     border-radius: 0 0 20px 0;
   }
     span.text.aboutsec {
@@ -168,6 +175,7 @@ div#pianoBox.pianoContainer {
       height: 180px;
       background-color: rgb(207, 209, 202);
       border: 4px solid rgb(34, 34, 34);
+      border-bottom: 15px outset rgb(58, 58, 58);
       border-radius: 0 0 6px 6px;
       margin-left: -4px;
       outline: none;
@@ -203,7 +211,7 @@ div#pianoBox.pianoContainer {
         left: 316px;
       }
         .pressed {
-          /* box-shadow: 0 0 10px white; */
+          box-shadow: 3px 3px 10px inset rgb(70, 70, 70);
           border: 4px solid rgb(99, 99, 99);
           background-color: #b1b1b1;
         }
@@ -211,6 +219,8 @@ div#pianoBox.pianoContainer {
 
 .encMessage {
   grid-area: endMsg;
+  width: 100%;
+  height: 180px;
   justify-items: center;
   align-items: center;
 }
@@ -222,7 +232,7 @@ div#pianoBox.pianoContainer {
   }
 
 
-.credits {
+.credits.footerSection {
   grid-area: creds;
   display: grid;
   height: 10%;
@@ -243,17 +253,12 @@ div#pianoBox.pianoContainer {
     grid-area: fLogos;
     display: grid;
     grid-template-areas:
-      "glog llog ilog flog";
+      "llog ilog flog";
     justify-content: center;
   }
     img.gitlogo, img.linkedinlogo, img.inslogo, img.fblogo {
-      /* min-width: 22px;
-      max-width: 22px; */
       width: 22px;
       margin: 25% 25%;
-    }
-    img.gitlogo {
-      grid-area: glog;
     }
     img.linkedinlogo {
       grid-area: llog;
@@ -266,12 +271,12 @@ div#pianoBox.pianoContainer {
     }
 
 .text-muted {
-  opacity: 0.5;
+  opacity: 0.85;
 }
 
 .game-over {
-  border: 3px solid red;
-  opacity: 0.8;
+  opacity: 0.9;
+  background-color: transparent;
 }
 
 /* Animations */
@@ -287,9 +292,29 @@ div#pianoBox.pianoContainer {
     width: 100%;
     padding: 0;
   }
+
+  h1#level-title {
+    font-size: 1.3rem;
+  }
+  h1#level-message {
+    font-size: 1.1rem;
+  }
 }
+
+/* Bootstrap Overrides */
 
 ::-webkit-input-placeholder {
   font-size: 16px;
   font-family: 'Helvetica', sans-serif;
 }
+
+.form-control:focus, .form-control:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.navbar-toggler:focus, .navbar-toggler:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+

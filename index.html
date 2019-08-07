@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>🎵Echo🎵</title>
+  <title>🎵 Echo 🎵 Sandbox Version</title>
 
   <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700,900&display=swap" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>  
@@ -17,7 +17,8 @@
 </head>
 
 <body class="body" id="thisBody">
-
+  
+  <!-- <div class="parallaxScroller"></div> -->
   
     <nav class="navbar navbar-light justify-content-between" id="navbaridle" style="background-color: transparent; height: 80%; border-bottom: 1px solid rgb(95, 94, 94);">
         
@@ -34,27 +35,27 @@
     </nav>
 
 
-  <div class="pos-f-t container-fluid">
+  <div class="pos-f-t container-fluid accordian" id="navDropdownAccordian">
       <div class="collapse" id="navbarToggleExternalContent">
         <div class="p-4 collapse" id="navBarDropContainer" style="background-color: transparent;">
           
           <div class="difficultySection">
-            <span class="text col-title1 text-muted">Difficulty</span>
+            <span class="text col-title1 text-muted collapse show" data-toggle="collapse show" data-target="#difficultyBtnGroup">Difficulty</span>
   
-            <div class="btn-group btn-group-toggle btn-grp1" data-toggle="buttons">
-              <label class="btn btn-secondary text-muted active" id="button1" style="background-color: #cadefc">
+            <div class="btn-group btn-group-toggle btn-grp1 collapse" id="difficultyBtnGroup" data-toggle="buttons" data-parent="#navDropdownAccordian">
+              <label class="btn btn-secondary text-muted active" id="button1" style="background-color: #292929c0; color: rgb(199, 199, 199);">
                 <input type="radio" name="options" id="option1" autocomplete="off" checked> Easy 
               </label>
 
-              <label class="btn btn-secondary text-muted" id="button2" style="background-color: #cadefc">
+              <label class="btn btn-secondary text-muted" id="button2" style="background-color: #292929c0; color: rgb(199, 199, 199);">
                 <input type="radio" name="options" id="option2" autocomplete="off"> Normal
               </label>
 
-              <label class="btn btn-secondary text-muted" id="button3" style="background-color: #cadefc">
+              <label class="btn btn-secondary text-muted" id="button3" style="background-color: #292929c0; color: rgb(199, 199, 199);">
                 <input type="radio" name="options" id="option3" autocomplete="off"> Hard
               </label>
 
-              <label class="btn btn-secondary text-muted" id="button4" style="background-color: #cadefc">
+              <label class="btn btn-secondary text-muted" id="button4" style="background-color: #292929c0; color: rgb(199, 199, 199);">
                 <input type="radio" name="options" id="option4" autocomplete="off"> Hell
               </label>
             </div>
@@ -155,7 +156,6 @@
 
         <a href="https://github.com/simpleCodify" class="gitLink" style="color: rgb(150, 150, 150);">simpleCodify</a>
         <div class="footerLogos">
-          <img class ="gitlogo" src="https://image.flaticon.com/icons/svg/270/270798.svg">
           <img class="linkedinlogo" src="https://image.flaticon.com/icons/svg/174/174857.svg">
           <img class="inslogo" src="https://image.flaticon.com/icons/svg/174/174855.svg">
           <img class="fblogo" src="https://image.flaticon.com/icons/svg/174/174848.svg">
