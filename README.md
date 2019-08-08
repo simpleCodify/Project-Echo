@@ -84,9 +84,15 @@ HTML, CSS, Javascript, jQuery, Flexbox, Grid, Bootstrap, localStorage, JSON
 
 ## **Screenshots of Game** : 
 
-![Game-Idle-Image](https://github.com/simpleCodify/Project-Echo/blob/master/images/Game-Idle.png)
+![Game-Idle-Image](https://raw.githubusercontent.com/simpleCodify/Project-Echo/master/images/Game-Idle.png)
 
-![Game-Level-1-Image](https://github.com/simpleCodify/Project-Echo/blob/master/images/Game-Level-1.png)
+![Game-In-Progress-Image](https://raw.githubusercontent.com/simpleCodify/Project-Echo/master/images/Game-In-Progress.png)
 
-![Game-Idle-with-Navbar-Image](https://github.com/simpleCodify/Project-Echo/blob/master/images/Game-Nav-Idle.png)
+![Game-Mobile-Image](https://raw.githubusercontent.com/simpleCodify/Project-Echo/master/images/Game-Mobile-Idle.png)
+
+![Game-Mobile-Idle](https://raw.githubusercontent.com/simpleCodify/Project-Echo/master/images/Game-Mobile-Idle.png)
+
+![Game-Over-Image](https://raw.githubusercontent.com/simpleCodify/Project-Echo/master/images/Game-Over.png)
+
+
 
