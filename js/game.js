@@ -25,12 +25,11 @@ document.getElementById('inlineFormInput').addEventListener("keyup", function(){
   playerName = $("#inlineFormInput").val();
 })
 
-
 $(document).on("keyup", function(e) {
   operationKey(e) ;
 });
 
-  //-- Test for Keyboard Key Press --//
+//-- Test for Keyboard Key Press --//
 
 function operationKey(e){
   var audio2 = document.querySelector(`audio[data-key="${e.keyCode}"]`);
@@ -137,7 +136,6 @@ function encouragementMessage(){
     default:
       $("#level-message").text(`You got this ${playerName}!`);
   }
-
   $("#level-title").text("Level " + level);
   setTimeout(function() {
     $("#level-message").text("");
@@ -149,14 +147,14 @@ function encouragementMessage(){
 function displayHighScores(calcNeeded){
   if (calcNeeded) highScores();
   for (var i = 0 ; i < top5Scores.length  ; i++ ) {
-    $("." + (i+1) + "level").text(top5Scores[i][1]);
+    $("." + (i+1) + "level").text(top5Scores[i][1] + " (" + top5Scores[i][2] + ")");
     $("." + (i+1) + "name" ).text(top5Scores[i][0]);
   }
 }
 
 function highScores() {
   if ( playerName === "" ) return;
-  var tmpTopScore = [playerName, level];
+  var tmpTopScore = [playerName, level, difficulty];
   if ( top5Scores.length == 0 ) {
     top5Scores.push(tmpTopScore);
     return ;
@@ -171,7 +169,6 @@ function highScores() {
     }
   }
   if ( top5Scores.length > 5 ) top5Scores.pop();
-
   localStorage.setItem('items', JSON.stringify(top5Scores))
 }
 
@@ -281,4 +278,3 @@ $('#button4').click(function() {
   $('#button1,#button2,#button3').removeClass("active").addClass("text-muted");
   $(this).addClass("active").removeClass("text-muted");
 });
-

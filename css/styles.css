@@ -81,7 +81,7 @@ body {
 div.pos-f-t.container-fluid {
   grid-area: dropBar;
   width: 25%;
-  margin-top: 5%;
+  margin-top: 4%;
   position: fixed;
   right: 0;
   grid-template-columns: auto 35%;
@@ -117,7 +117,8 @@ div#navBarDropContainer.p-4 {
     display: grid;
     grid-area: tSec;
     text-align: center;
-    justify-content: space-around;
+    font-size: 14px;
+    justify-content: space-evenly;
     border-radius: 0 0 20px 0;
   }
     
