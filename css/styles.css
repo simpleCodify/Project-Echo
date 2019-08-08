@@ -309,6 +309,10 @@ button#navToggleBtn.navbar-toggler.btn-outline-primary:focus, button#navToggleBt
   box-shadow: none !important;
 }
 
+label#button1.btn.btn-secondary:hover, label#button2.btn.btn-secondary:hover, label#button3.btn.btn-secondary:hover, label#button4.btn.btn-secondary:hover {
+  color: #f1f1f1 !important;
+}
+
 /* Media Queries */
 
 @media only screen and (max-width: 1150px) {
