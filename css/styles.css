@@ -11,13 +11,13 @@ html, body {
 
 
 body {
-  /* background: linear-gradient(137deg, rgba(0,0,0,1) 0%, rgba(27,27,27,1) 45%, rgba(32,32,32,0.7021183473389356) 50%, rgba(27,27,27,1) 55%, rgba(0,0,0,1) 100%);
-  background-size: 1000% 1000%;
+  /* background: linear-gradient(137deg, rgba(0,0,0,1) 0%, rgba(27,27,27,1) 45%, rgba(32,32,32,0.5) 50%, rgba(27,27,27,1) 55%, rgba(0,0,0,1) 100%);
+  background-size: 500% 500%;
   -webkit-animation: AnimationName 15s ease infinite;
   animation: AnimationName 15s ease infinite; */
-  background: linear-gradient(137deg, #000000, #202020, #000000);
+  background: linear-gradient(137deg, #000000, #313131, #000000);
   background-size: 600% 600%;
-  -webkit-animation: AnimationName 9s ease infinite;
+  -webkit-animation: AnimationName 10s ease infinite;
   animation: AnimationName 9s ease infinite;
   height: 100%;
   display: grid;
@@ -31,6 +31,8 @@ body {
     "endMsg"
     "creds";
 }
+
+/* Navbar Top Idle */
 
   div#navbaridle.navbar.navbar-light {
     display: grid;
@@ -79,9 +81,15 @@ body {
         grid-area: nTbtn;
       }
 
+/* Navbar Top Dropped Down */
+
 div.pos-f-t.container-fluid {
   grid-area: dropBar;
-  width: 50%;
+  width: 25%;
+  margin-top: 5%;
+  position: fixed;
+  right: 0;
+  grid-template-columns: auto 35%;
   padding: 0;
 }
 div#navBarDropContainer.p-4 {
@@ -90,12 +98,13 @@ div#navBarDropContainer.p-4 {
   grid-area: dropBar;
   align-self: center;
   justify-self: center;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: auto;
   grid-column-gap: 1%;
-  grid-row-gap: 2%;
+  grid-row-gap: 5%;
   grid-template-areas:
-    "tSec dSec"
-    "tSec aSec";
+    "tSec"
+    "dSec"
+    "aSec";
 }
   div.difficultySection {
     display: grid;
@@ -105,6 +114,7 @@ div#navBarDropContainer.p-4 {
     justify-content: space-around;
     /* border: 1px outset #ffffff; */
     border-radius: 0 0 20px 0;
+    margin-bottom: 20px;
   }
     span.text.col-title1 {
       color: lightgray;
@@ -139,6 +149,8 @@ div#navBarDropContainer.p-4 {
       align-self: center;
     }
 
+/* Level Indication Message */
+
 .message-center {
   
   grid-area: msgCenter;
@@ -153,6 +165,8 @@ div#navBarDropContainer.p-4 {
     margin: 6% 0;
     /* text-shadow: 5px 5px 5px #585858; */
   }
+
+/* Piano Section */
 
 div#pianoBox.pianoContainer {
   display: grid;
@@ -216,6 +230,7 @@ div#pianoBox.pianoContainer {
           background-color: #b1b1b1;
         }
       
+/* Encouragement Messages */
 
 .encMessage {
   grid-area: endMsg;
@@ -231,6 +246,7 @@ div#pianoBox.pianoContainer {
     margin: 7% 0;
   }
 
+/* Footer Section */
 
 .credits.footerSection {
   grid-area: creds;
@@ -270,6 +286,8 @@ div#pianoBox.pianoContainer {
       grid-area: flog;
     }
 
+/* Misc Items */
+
 .text-muted {
   opacity: 0.85;
 }
@@ -287,20 +305,6 @@ div#pianoBox.pianoContainer {
   100%{background-position:0% 5%}
 }
 
-@media only screen and (max-width: 768px) {
-  div.pos-f-t.container-fluid {
-    width: 100%;
-    padding: 0;
-  }
-
-  h1#level-title {
-    font-size: 1.3rem;
-  }
-  h1#level-message {
-    font-size: 1.1rem;
-  }
-}
-
 /* Bootstrap Overrides */
 
 ::-webkit-input-placeholder {
@@ -313,8 +317,56 @@ div#pianoBox.pianoContainer {
   box-shadow: none !important;
 }
 
-.navbar-toggler:focus, .navbar-toggler:active {
+button#navToggleBtn.navbar-toggler.btn-outline-primary:focus, button#navToggleBtn.navbar-toggler.btn-outline-primary:active {
   outline: none !important;
   box-shadow: none !important;
 }
 
+/* Media Queries */
+
+@media only screen and (max-width: 768px) {
+  div.pos-f-t.container-fluid {
+    width: 100%;
+    height: 40%;
+    position: static;
+    /* overflow: auto; */
+    padding: 0;
+  }
+
+  h1#level-title {
+    font-size: 1.3rem;
+  }
+  h1#level-message {
+    font-size: 1.1rem;
+  }
+
+  div#navBarDropContainer.p-4 {
+    display: grid;
+    padding: 0;
+    grid-area: dropBar;
+    position: static;
+    align-self: center;
+    justify-self: center;
+    grid-template-columns: auto;
+    grid-column-gap: 1%;
+    grid-row-gap: 10%;
+    grid-template-areas:
+      "dSec"
+      "tSec"
+      "aSec";
+}
+
+.body {
+  height: auto;
+  display: grid;
+  grid-template-areas:
+    "navBarTop"
+    "msgCenter"
+    "pianoContainer"
+    "endMsg"
+    "dropBar"
+    "creds";
+}
+a.gitLink {
+  padding-top: 45px;
+}
