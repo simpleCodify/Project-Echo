@@ -88,10 +88,10 @@ function checkAnswer(currentLevel) {
     $("#level-message").text(`You got to ${level} ${playerName}!`);
 
     setTimeout(function() {
-      $("#level-title").css("color", "#353a3f");
+      $("#level-title").css("color", "rgb(150, 150, 150)");
       $(".key").removeClass("game-over");
-      $("#level-message").text("");
-    }, 1500);
+      $("#level-title").text("Try again!")
+    }, 2500);
     restart();
   }
 }

@@ -49,7 +49,15 @@ You can either press the keys with the mouse, or play the keys on your Keyboard.
    
 ---
 
-## **Patch Notes** :
+## **Patch Notes** : 
+
+**Version 1.2 Update!**
+**Complete overhaul of UX/UI Design.**
+
+Added Media query breakpoint of 1150px width.
+Try playing on your phone!
+Enjoy the clean sleek new look?
+
 **Version 1.1 Update!**   
 
 Now saves your progress to your local storage!

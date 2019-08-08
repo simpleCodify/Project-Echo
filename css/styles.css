@@ -1,5 +1,3 @@
-
-
 html, body {
   margin: 0;
   padding: 0;
@@ -16,7 +14,7 @@ body {
   -webkit-animation: AnimationName 15s ease infinite;
   animation: AnimationName 15s ease infinite; */
   background: linear-gradient(137deg, #000000, #313131, #000000);
-  background-size: 600% 600%;
+  background-size: 950% 950%;
   -webkit-animation: AnimationName 10s ease infinite;
   animation: AnimationName 9s ease infinite;
   height: 100%;
@@ -55,7 +53,6 @@ body {
         .game-title.h4 {
           font-weight: 400;
           color: rgb(206,206, 206);
-          /* text-shadow: 2px 2px 4px #c3bef0; */
         }
     .rightsideNav {
       display: grid;
@@ -76,8 +73,6 @@ body {
       button#navToggleBtn.navbar-toggler {
         display: grid;
         justify-self: end;
-        /* width: 60px; */
-        /* background-image: url(https://image.flaticon.com/icons/svg/179/179567.svg); */
         grid-area: nTbtn;
       }
 
@@ -112,7 +107,6 @@ div#navBarDropContainer.p-4 {
     text-align: center;
     align-content: space-around;
     justify-content: space-around;
-    /* border: 1px outset #ffffff; */
     border-radius: 0 0 20px 0;
     margin-bottom: 20px;
   }
@@ -123,9 +117,7 @@ div#navBarDropContainer.p-4 {
     display: grid;
     grid-area: tSec;
     text-align: center;
-    /* align-content: space-around; */
     justify-content: space-around;
-    /* border: 1px outset #ffffff; */
     border-radius: 0 0 20px 0;
   }
     
@@ -134,7 +126,6 @@ div#navBarDropContainer.p-4 {
     grid-area: aSec;
     text-align: center;
     background-color: transparent;
-    /* border: 1px outset #ffffff; */
     border-radius: 0 0 20px 0;
   }
     span.text.aboutsec {
@@ -152,7 +143,6 @@ div#navBarDropContainer.p-4 {
 /* Level Indication Message */
 
 .message-center {
-  
   grid-area: msgCenter;
   justify-items: center;
   align-items: center;
@@ -160,19 +150,15 @@ div#navBarDropContainer.p-4 {
   h1#level-title {
     text-align: center;
     color: rgb(150, 150, 150);
-    font-weight: 200;
+    font-weight: 300;
     font-size: 3rem;
     margin: 6% 0;
-    /* text-shadow: 5px 5px 5px #585858; */
   }
 
 /* Piano Section */
 
 div#pianoBox.pianoContainer {
   display: grid;
-  /* position: relative; */
-  /* grid-area: pianoContainer; */
-  /* margin: 15% 0; */
   min-width: 424px;
   grid-area: pianoContainer;
   justify-items: center;
@@ -324,7 +310,7 @@ button#navToggleBtn.navbar-toggler.btn-outline-primary:focus, button#navToggleBt
 
 /* Media Queries */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1150px) {
   div.pos-f-t.container-fluid {
     width: 100%;
     height: 40%;
