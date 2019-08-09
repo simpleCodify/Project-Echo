@@ -342,17 +342,19 @@ label#button1.btn.btn-secondary:hover, label#button2.btn.btn-secondary:hover, la
       "aSec";
 }
 
-.body {
-  height: auto;
-  display: grid;
-  grid-template-areas:
-    "navBarTop"
-    "msgCenter"
-    "pianoContainer"
-    "endMsg"
-    "dropBar"
-    "creds";
-}
-a.gitLink {
-  padding-top: 45px;
+  body {
+    height: auto;
+    display: grid;
+    grid-template-areas:
+      "navBarTop"
+      "msgCenter"
+      "pianoContainer"
+      "endMsg"
+      "dropBar"
+      "creds";
+  }
+
+  a.gitLink {
+    padding-top: 45px;
+  }
 }
