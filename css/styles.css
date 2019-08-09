@@ -9,13 +9,10 @@ html, body {
 
 
 body {
-  /* background: linear-gradient(137deg, rgba(0,0,0,1) 0%, rgba(27,27,27,1) 45%, rgba(32,32,32,0.5) 50%, rgba(27,27,27,1) 55%, rgba(0,0,0,1) 100%);
-  background-size: 500% 500%;
-  -webkit-animation: AnimationName 15s ease infinite;
-  animation: AnimationName 15s ease infinite; */
+  /* background: linear-gradient(137deg, rgba(0,0,0,1) 0%, rgba(3,21,31,1) 17%, rgba(0,0,0,1) 33%, rgba(28,2,24,1) 50%, rgba(0,0,0,1) 67%, rgba(2,21,23,1) 83%, rgba(0,0,0,1) 100%); */
   background: linear-gradient(137deg, #000000, #313131, #000000);
   background-size: 950% 950%;
-  -webkit-animation: AnimationName 10s ease infinite;
+  -webkit-animation: AnimationName 9s ease infinite;
   animation: AnimationName 9s ease infinite;
   height: 100%;
   display: grid;

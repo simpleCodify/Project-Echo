@@ -16,20 +16,20 @@ var difficulty = 1;
 var msec = 800;
 var playerName = $("#inlineFormInput").val();
 var top5Scores = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : []
-
+var gameoverDelay;
 displayHighScores(false);
 
-//-- User Keypress --//
+//-- Takes Player Name for High Score --//
 
 document.getElementById('inlineFormInput').addEventListener("keyup", function(){
   playerName = $("#inlineFormInput").val();
 })
 
+//-- Test for Keyboard Key Press --//
+
 $(document).on("keyup", function(e) {
   operationKey(e) ;
 });
-
-//-- Test for Keyboard Key Press --//
 
 function operationKey(e){
   var audio2 = document.querySelector(`audio[data-key="${e.keyCode}"]`);
@@ -38,9 +38,9 @@ function operationKey(e){
   animatePress(userPressedKey);
   if (started === false) {
     if (e.keyCode == 32) {
-      $("#level-title").text("Level " + level);
+      displayMessages("newStart");
       started = true;
-      nextSequence();   
+      nextSequence();
     }
     return ;
   }      
@@ -52,7 +52,7 @@ function operationKey(e){
   return ;
 }
 
-//-- User Clicks a Piano Key --//
+//-- User Clicks a Piano Key w/ Mouse --//
 
 $(".key").click(function() {
   var userClickedKey = $(this).attr("id");
@@ -63,35 +63,111 @@ $(".key").click(function() {
   checkAnswer(userClickedNotes.length - 1);
 });
 
+//-- Next Sequence Function --//
 
-//-- Functions of the Game --//
+function nextSequence() {
+  userClickedNotes = [];
+  
+  var randomKey;
+  var randomNum;
+  
+  if (difficulty % 2 == 1) {
+    randomNum = Math.floor(Math.random() * 7);
+    randomKey = whitePianoKeysOnly[randomNum];
+  }
+  else {
+    randomNum = Math.floor(Math.random() * 12);
+    randomKey = pianoKeys[randomNum];
+  }
+  if (started != false) {
+    level++;
+  }
+
+  encouragementMessage(); 
+  gamePattern.push(randomKey);
+  interval();
+  playSequence(gamePattern);
+
+  if (difficulty == 1 || difficulty == 2) {
+    animateSequence(gamePattern);
+  }
+}
+
+//-- Check Player's Answer --//
 
 function checkAnswer(currentLevel) {
   if (started == false) return;
   
   if (gamePattern[currentLevel] === userClickedNotes[currentLevel]) {
     if (userClickedNotes.length === gamePattern.length) {
-      var clearNextSquence = setTimeout(function() {
+      var nextSequenceDelay = setTimeout(function() {
         nextSequence();
       }, 1000);
     }
   } else {
-    clearTimeout(clearNextSquence) ;
+   // clearTimeout(nextSequenceDelay) ;
     started = false ;
-    
     displayHighScores(true);
-    playSound("wrong");
+    displayMessages("gameOver");
+    restart();
+  }
+}
 
-    $("#level-title").text("Game Over").css("color", "red");
-    $(".key").addClass("game-over");
-    $("#level-message").text(`You got to ${level} ${playerName}!`);
+// --High Scores Function-- //
 
-    setTimeout(function() {
+function displayHighScores(calcNeeded){
+  if (calcNeeded) highScores();
+  for (var i = 0 ; i < top5Scores.length; i++ ) {
+    $("." + (i+1) + "level").text(top5Scores[i][1] + " (" + top5Scores[i][2] + ")");
+    $("." + (i+1) + "name" ).text(top5Scores[i][0]);
+  }
+}
+
+function highScores() {
+  if ( playerName === "" ) return;
+  var tmpTopScore = [playerName, level, difficulty];
+  for (var i = top5Scores.length - 1; i >= 0 ; i--) {
+    if (level <= top5Scores[i][1]) {
+      top5Scores.splice(i+1,0,tmpTopScore) ;
+      break;
+    }
+    else if ( i == 0 ) {
+      top5Scores.unshift(tmpTopScore);
+    }
+  }
+  if ( top5Scores.length == 0 ) {
+    top5Scores.push(tmpTopScore);
+  }
+  if ( top5Scores.length > 5 ) top5Scores.pop();
+  localStorage.setItem('items', JSON.stringify(top5Scores))
+}
+
+//-- Restart Function --//
+
+function restart() {
+  level = 0;
+  gamePattern = [];
+  started = false;
+}
+
+function displayMessages(curMsg){
+  switch(curMsg) {
+    case "gameOver": 
+      playSound("wrong");
+      $("#level-title").text("Game Over").css("color", "red");
+      $(".key").addClass("game-over");
+      $("#level-message").text(`You got to ${level} ${playerName}!`);
+      gameoverDelay = setTimeout(function() {
+        $("#level-title").css("color", "rgb(150, 150, 150)");
+        $(".key").removeClass("game-over");
+        $("#level-title").text("Try again!");
+      }, 2500);
+      break;
+    case "newStart":
+      clearTimeout(gameoverDelay);
       $("#level-title").css("color", "rgb(150, 150, 150)");
       $(".key").removeClass("game-over");
-      $("#level-title").text("Try again!")
-    }, 2500);
-    restart();
+      break;
   }
 }
 
@@ -142,63 +218,6 @@ function encouragementMessage(){
   }, 1500);
 }
 
-// --High Scores Function-- //
-
-function displayHighScores(calcNeeded){
-  if (calcNeeded) highScores();
-  for (var i = 0 ; i < top5Scores.length  ; i++ ) {
-    $("." + (i+1) + "level").text(top5Scores[i][1] + " (" + top5Scores[i][2] + ")");
-    $("." + (i+1) + "name" ).text(top5Scores[i][0]);
-  }
-}
-
-function highScores() {
-  if ( playerName === "" ) return;
-  var tmpTopScore = [playerName, level, difficulty];
-  if ( top5Scores.length == 0 ) {
-    top5Scores.push(tmpTopScore);
-    return ;
-  } 
-  for (var i = top5Scores.length - 1; i >= 0 ; i--) {
-    if (level <= top5Scores[i][1]) {
-      top5Scores.splice(i+1,0,tmpTopScore) ;
-      break;
-    }
-    else if ( i == 0 ) {
-      top5Scores.unshift(tmpTopScore);
-    }
-  }
-  if ( top5Scores.length > 5 ) top5Scores.pop();
-  localStorage.setItem('items', JSON.stringify(top5Scores))
-}
-
-//-- Next Sequence Function --//
-
-function nextSequence() {
-  userClickedNotes = [];
-  
-  var randomKey ;
-  var randomNum ;
-  
-  if (difficulty % 2 == 1) {
-    randomNum = Math.floor(Math.random() * 7);
-    randomKey = whitePianoKeysOnly[randomNum];
-  }
-  else {
-    randomNum = Math.floor(Math.random() * 12);
-    randomKey = pianoKeys[randomNum];
-  }
-  level++;
-  encouragementMessage(); 
-  gamePattern.push(randomKey);
-  interval();
-  playSequence(gamePattern);
-
-  if (difficulty == 1 || difficulty == 2) {
-    animateSequence(gamePattern);
-  }
-}
-
 //-- Keys Animation --//
 
 function animatePress(currentKey) {
@@ -238,12 +257,6 @@ function playSequence(sequence) {
       singleAudio.play();
     }, idx*msec); 
   })
-}
-
-function restart() {
-  level = 0;
-  gamePattern = [];
-  started = false;
 }
 
 //-- Timer --//
