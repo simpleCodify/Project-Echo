@@ -28,7 +28,7 @@ document.getElementById('inlineFormInput').addEventListener("keyup", function(){
 //-- Test for Keyboard Key Press --//
 
 $(document).on("keyup", function(e) {
-  operationKey(e) ;
+  operationKey(e);
 });
 
 function operationKey(e){
@@ -105,7 +105,6 @@ function checkAnswer(currentLevel) {
       }, 1000);
     }
   } else {
-   // clearTimeout(nextSequenceDelay) ;
     started = false ;
     displayHighScores(true);
     displayMessages("gameOver");
@@ -128,7 +127,7 @@ function highScores() {
   var tmpTopScore = [playerName, level, difficulty];
   for (var i = top5Scores.length - 1; i >= 0 ; i--) {
     if (level <= top5Scores[i][1]) {
-      top5Scores.splice(i+1,0,tmpTopScore) ;
+      top5Scores.splice(i+1,0,tmpTopScore);
       break;
     }
     else if ( i == 0 ) {

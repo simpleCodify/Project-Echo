@@ -7,9 +7,7 @@ html, body {
   color: #cadefc;
 }
 
-
 body {
-  /* background: linear-gradient(137deg, rgba(0,0,0,1) 0%, rgba(3,21,31,1) 17%, rgba(0,0,0,1) 33%, rgba(28,2,24,1) 50%, rgba(0,0,0,1) 67%, rgba(2,21,23,1) 83%, rgba(0,0,0,1) 100%); */
   background: linear-gradient(137deg, #000000, #313131, #000000);
   background-size: 950% 950%;
   -webkit-animation: AnimationName 9s ease infinite;
@@ -241,7 +239,6 @@ div#pianoBox.pianoContainer {
   grid-template-areas:
   "gLink"
   "fLogos";
-
 }
   a.gitLink {
     grid-area: gLink;
@@ -324,6 +321,7 @@ label#button1.btn.btn-secondary:hover, label#button2.btn.btn-secondary:hover, la
   h1#level-title {
     font-size: 1.3rem;
   }
+
   h1#level-message {
     font-size: 1.1rem;
   }
