@@ -94,5 +94,5 @@ HTML, CSS, Javascript, jQuery, Flexbox, Grid, Bootstrap, localStorage, JSON
 
 ![Game-Over-Image](https://raw.githubusercontent.com/simpleCodify/Project-Echo/master/images/Game-Over.png)
 
-
+[Play Now!](https://simplecodify.github.io/Project-Echo/)
 
